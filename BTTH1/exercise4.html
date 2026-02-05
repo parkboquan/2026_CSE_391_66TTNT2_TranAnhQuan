@@ -1,11 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Exercise 4</title>
 </head>
+
 <body>
-    
+    <h3>Basic Info</h3>
+    <hr>
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <td>9</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>Dodsworth</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td><input type="text" value="Anne"></td>
+        </tr>
+        <tr>
+            <th rowspan="4">Gender</th>
+            <td><input type="radio" name="gender" value="male"> Male</td>
+            <td></td>
+        <tr>
+            <td><input type="radio" name="gender" value="female"> Female</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="gender" value="xxx"> XXX</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="gender" value="zzz">ZZZ</td>
+        </tr>
+        </tr>
+        <tr>
+            <th>Title</th>
+            <td><input type="text" value="Sales Representative"></td>
+        </tr>
+        <tr>
+            <th>Suffix</th>
+            <td><input type="text" value="Ms."></td>
+        </tr>
+        <tr>
+            <th>BirthDate</th>
+            <td><input type="text" value="1969-07-02 00:00:00"></td>
+        </tr>
+        <tr>
+            <th>HireDate</th>
+            <td><input type="text" value="1994-11-15 00:00:00"></td>
+        </tr>
+        <tr>
+            <th>SSN # (if applicable)</th>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <th>Reports To</th>
+            <td><select name="" id="">
+                    <option value="1">SungJiWoo</option>
+                    <option value="2">Doraemon</option>
+                    <option value="3">DoMixi</option>
+                    <option value="4">Messi</option>
+                    <option value="5" selected>Buchanan</option>
+                </select></td>
+        </tr>
+    </table>
+    <h3>Contact Info</h3>
+    <hr>
+    <table>
+        <tr>
+            <th>Email</th>
+            <td><input type="text" placeholder="name@example.com"></td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td><input type="text" value="7 Houndstooth Rd."></td>
+        </tr>
+        <tr>
+            <th>City</th>
+            <td><input type="text" value="London"></td>
+        </tr>
+        <tr>
+            <th>Region</th>
+            <td><input type="text"></td>
+        </tr>
+        <tr>
+            <th>Postal Code</th>
+            <td><input type="text" value="WG2 7LT"></td>
+        </tr>
+        <tr>
+            <th>Country</th>
+            <td><select name="" id="">
+                    <option value="Country" selected>Russian Federation</option>
+                    <option value="Country">United States</option>
+                    <option value="Country">Viet Nam</option>
+
+                </select></td>
+        </tr>
+        <tr>
+            <th>US Home Phone</th>
+            <td><input type="tel" value="(234)234-2342"></td>
+        </tr>
+        <tr>
+            <th>Photo</th>
+            <td><input type="file"></td>
+        </tr>
+    </table>
+    <h3>Optional Info</h3>
+    <hr>
+    <table>
+        <tr>
+            <th>Notes</th>
+            <td><textarea rows="8"
+                    cols="40">Anne has a BA degree in English from St.Lawrence College.She is fluent in French and German.ZZZ</textarea>
+            </td>
+        </tr>
+        <tr>
+            <th rowspan="2">Preferred Shift</th>
+            <td><input type="checkbox" value="shift">Regular</td>
+        </tr>
+        <tr>
+            <td><input type="checkbox" value="shift">Gravy Yard</td>
+        </tr>
+        <tr>
+            <th>Active?</th>
+            <td><input type="checkbox"></td>
+        </tr>
+        <tr>
+            <th>Are you human?</th>
+            <td>click to change <br><input type="text"></td>
+        </tr>
+    </table>
+    <hr>
+    <input type="submit" value="Submit">
+    <input type="reset" value="Cancel">
+    <p>* required</p>
 </body>
 </html>
