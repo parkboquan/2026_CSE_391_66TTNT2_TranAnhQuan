@@ -1,0 +1,65 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  background-color: #f2f2f2;
+  color: #333;
+}
+
+/* HEADER */
+header {
+  position: absolute;
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+#page-logo a {
+  font-family: "Oleo Script", cursive;
+  font-size: 28px;
+  color: #fcd34d;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #fcd34d;
+  font-weight: 500;
+}
+
+nav a:hover {
+  border-bottom: 2px solid #fcd34d;
+}
+
+/* FOOTER */
+footer {
+  background: #111;
+  padding: 30px 0;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  list-style: none;
+}
+
+footer img {
+  width: 30px;
+  height: 30px;
+  filter: invert(1);
+}
