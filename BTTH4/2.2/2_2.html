@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đặt Hàng Nâng Cao</title>
+<link rel="stylesheet" href="2_2.css">
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Đặt Hàng Trực Tuyến</h2>
+    <form id="orderForm">
+        <div class="form-group">
+            <label for="product">Sản phẩm *</label>
+            <select id="product" name="product">
+                <option value="">-- Chọn sản phẩm --</option>
+                <option value="ao_thun">Áo Thun</option>
+                <option value="quan_jean">Quần Jean</option>
+                <option value="giay_the_thao">Giày Thể Thao</option>
+            </select>
+            <div class="error-message" id="productError">Vui lòng chọn sản phẩm</div>
+        </div>
+
+        <div class="form-group">
+            <label for="quantity">Số lượng * (1 - 99)</label>
+            <input type="number" id="quantity" name="quantity" min="1" max="99" value="1">
+            <div class="error-message" id="quantityError">Số lượng phải từ 1 đến 99</div>
+        </div>
+
+        <div class="total-price-box">
+            Tổng tiền: <span id="totalPriceDisplay">0 VNĐ</span>
+        </div>
+
+        <div class="form-group">
+            <label for="deliveryDate">Ngày giao hàng *</label>
+            <input type="date" id="deliveryDate" name="deliveryDate">
+            <div class="error-message" id="dateError">Ngày giao không hợp lệ (không ở quá khứ, tối đa 30 ngày tới)</div>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Địa chỉ giao hàng *</label>
+            <input type="text" id="address" name="address" placeholder="Nhập địa chỉ (ít nhất 10 ký tự)">
+            <div class="error-message" id="addressError">Địa chỉ không được để trống và phải từ 10 ký tự</div>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Ghi chú (Tùy chọn)</label>
+            <textarea id="notes" name="notes" rows="3" placeholder="Ghi chú thêm cho đơn hàng..."></textarea>
+            <span class="char-count" id="notesCount">0/200</span>
+            <div class="error-message" id="notesError">Ghi chú không được vượt quá 200 ký tự</div>
+        </div>
+
+        <div class="form-group">
+            <label>Phương thức thanh toán *</label>
+            <div class="radio-group">
+                <label><input type="radio" name="payment" value="COD"> COD</label>
+                <label><input type="radio" name="payment" value="Chuyển khoản"> Chuyển khoản</label>
+                <label><input type="radio" name="payment" value="Ví điện tử"> Ví điện tử</label>
+            </div>
+            <div class="error-message" id="paymentError">Vui lòng chọn phương thức thanh toán</div>
+        </div>
+
+        <button type="submit">Đặt Hàng</button>
+    </form>
+</div>
+
+<div class="modal-overlay" id="confirmModal">
+    <div class="modal-content">
+        <h3>Xác nhận đặt hàng?</h3>
+        <p><strong>Sản phẩm:</strong> <span id="summaryProduct"></span></p>
+        <p><strong>Số lượng:</strong> <span id="summaryQuantity"></span></p>
+        <p><strong>Ngày giao:</strong> <span id="summaryDate"></span></p>
+        <p><strong>Tổng tiền:</strong> <span id="summaryTotal" style="color: #2e7d32; font-weight: bold;"></span></p>
+        <div class="modal-actions">
+            <button class="btn-cancel" id="btnCancel">Hủy</button>
+            <button class="btn-confirm" id="btnConfirm">Xác nhận</button>
+        </div>
+    </div>
+</div>
+
+<script src="2_2.js"></script>
+</body>
+</html>
