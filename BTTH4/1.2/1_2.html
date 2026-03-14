@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý Sinh Viên</title>
+    <link rel="stylesheet" href="1_2.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Danh sách Sinh Viên</h2>
+        
+        <div class="filters">
+            <input type="text" id="searchInput" placeholder="Tìm kiếm tên sinh viên...">
+            
+            <select id="rankFilter">
+                <option value="Tất cả">Tất cả xếp loại</option>
+                <option value="Giỏi">Giỏi</option>
+                <option value="Khá">Khá</option>
+                <option value="Trung bình">Trung bình</option>
+                <option value="Yếu">Yếu</option>
+            </select>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>Họ và Tên</th>
+                    <th id="sortScoreBtn" class="sortable">Điểm <span id="sortIcon"></span></th>
+                    <th>Xếp Loại</th>
+                </tr>
+            </thead>
+            <tbody id="studentTableBody">
+                </tbody>
+        </table>
+    </div>
+
+        <script src="1_2.js"></script>
+</body>
+</html>
