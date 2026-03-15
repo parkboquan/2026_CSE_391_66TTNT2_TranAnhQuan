@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký Nâng Cấp</title>
+    <link rel="stylesheet" href="2_1.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="successMessage" class="hidden">
+        <h2>Đăng ký thành công! 🎉</h2>
+        <p>Chào mừng, <span id="successName"></span>!</p>
+    </div>
+
+    <form id="registerForm">
+        <h2>Đăng Ký Tài Khoản</h2>
+        
+        <div class="form-group">
+            <label for="fullname">Họ và tên * <span id="nameCount" class="char-count">0/50</span></label>
+            <input type="text" id="fullname" placeholder="Nhập họ và tên" maxlength="50">
+            <span class="error-msg" id="fullnameError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email *</label>
+            <input type="text" id="email" placeholder="name@domain.com">
+            <span class="error-msg" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Số điện thoại *</label>
+            <input type="text" id="phone" placeholder="Bắt đầu bằng số 0, gồm 10 số">
+            <span class="error-msg" id="phoneError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="password">Mật khẩu *</label>
+            <div class="password-wrapper">
+                <input type="password" id="password" placeholder="Tối thiểu 8 ký tự, 1 HOA, 1 thường, 1 số">
+                <span class="toggle-password" onclick="togglePassword('password', this)">👁️</span>
+            </div>
+            <div class="strength-meter">
+                <div id="strengthBar" class="strength-bar"></div>
+            </div>
+            <span id="strengthText" class="strength-text"></span>
+            
+            <span class="error-msg" id="passwordError"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Xác nhận mật khẩu *</label>
+            <div class="password-wrapper">
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                <span class="toggle-password" onclick="togglePassword('confirmPassword', this)">👁️</span>
+            </div>
+            <span class="error-msg" id="confirmPasswordError"></span>
+        </div>
+
+        <div class="form-group">
+            <label>Giới tính *</label>
+            <div class="radio-group">
+                <input type="radio" name="gender" id="male" value="Nam"> <label for="male">Nam</label>
+                <input type="radio" name="gender" id="female" value="Nữ"> <label for="female">Nữ</label>
+            </div>
+            <span class="error-msg" id="genderError"></span>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="terms">
+            <label for="terms">Tôi đồng ý với các điều khoản *</label>
+            <br>
+            <span class="error-msg" id="termsError"></span>
+        </div>
+
+        <button type="submit">Đăng Ký</button>
+    </form>
+</div>
+
+<script src="2_1.js"></script>
+</body>
+</html>
