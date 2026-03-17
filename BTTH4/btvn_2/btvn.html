@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-step Form</title>
+    <link rel="stylesheet" href="multi-step.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="progress-container">
+        <div class="progress-step active" id="indicator1">1</div>
+        <div class="progress-line" id="line1"></div>
+        <div class="progress-step" id="indicator2">2</div>
+        <div class="progress-line" id="line2"></div>
+        <div class="progress-step" id="indicator3">3</div>
+    </div>
+    <div class="progress-labels">
+        <span>Cá nhân</span>
+        <span>Tài khoản</span>
+        <span>Xác nhận</span>
+    </div>
+
+    <div id="successMessage" class="hidden">
+        <h2>Đăng ký thành công! 🎉</h2>
+        <p>Hồ sơ của bạn đã được ghi nhận.</p>
+    </div>
+
+    <form id="multiStepForm">
+        
+        <div class="form-step active" id="step1">
+            <h2>Bước 1: Thông tin cá nhân</h2>
+            <div class="form-group">
+                <label for="fullname">Họ và tên *</label>
+                <input type="text" id="fullname" placeholder="Nhập họ và tên">
+                <span class="error-msg" id="fullnameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="dob">Ngày sinh *</label>
+                <input type="date" id="dob">
+                <span class="error-msg" id="dobError"></span>
+            </div>
+            <div class="form-group">
+                <label>Giới tính *</label>
+                <div class="radio-group">
+                    <input type="radio" name="gender" id="male" value="Nam"> <label for="male">Nam</label>
+                    <input type="radio" name="gender" id="female" value="Nữ"> <label for="female">Nữ</label>
+                </div>
+                <span class="error-msg" id="genderError"></span>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn-next" onclick="goToStep(2)">Tiếp theo</button>
+            </div>
+        </div>
+
+        <div class="form-step" id="step2">
+            <h2>Bước 2: Thông tin tài khoản</h2>
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="text" id="email" placeholder="name@domain.com">
+                <span class="error-msg" id="emailError"></span>
+            </div>
+            <div class="form-group">
+                <label for="password">Mật khẩu *</label>
+                <input type="password" id="password" placeholder="Nhập mật khẩu">
+                <span class="error-msg" id="passwordError"></span>
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Xác nhận mật khẩu *</label>
+                <input type="password" id="confirmPassword" placeholder="Nhập lại mật khẩu">
+                <span class="error-msg" id="confirmPasswordError"></span>
+            </div>
+            <div class="btn-group split">
+                <button type="button" class="btn-prev" onclick="goToStep(1)">Quay lại</button>
+                <button type="button" class="btn-next" onclick="goToStep(3)">Tiếp theo</button>
+            </div>
+        </div>
+
+        <div class="form-step" id="step3">
+            <h2>Bước 3: Xác nhận thông tin</h2>
+            <div class="summary-box">
+                <p><strong>Họ và tên:</strong> <span id="sumName"></span></p>
+                <p><strong>Ngày sinh:</strong> <span id="sumDob"></span></p>
+                <p><strong>Giới tính:</strong> <span id="sumGender"></span></p>
+                <p><strong>Email:</strong> <span id="sumEmail"></span></p>
+            </div>
+            <div class="btn-group split">
+                <button type="button" class="btn-prev" onclick="goToStep(2)">Quay lại</button>
+                <button type="submit" class="btn-submit">Hoàn tất Đăng ký</button>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<script src="multi-step.js"></script>
+</body>
+</html>
